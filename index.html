@@ -3,37 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Suporte Locação Smart | Busca Progressiva</title>
+    <title>Locação Smart | Mural de Oportunidades</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Outfit', sans-serif; background-color: #FDFCFB; user-select: none; -webkit-user-select: none; }
-        .bg-beige-soft { background-color: #F7F2EE; }
-        .text-orange-main { color: #E87C46; }
+        body { font-family: 'Outfit', sans-serif; background-color: #FDFCFB; user-select: none; }
         .bg-orange-main { background-color: #E87C46; }
-        .card-auditado { background: white; padding: 24px; border-radius: 40px; border: 1px solid #fee2e2; transition: all 0.3s ease; }
+        .text-orange-main { color: #E87C46; }
+        .card-auditado { background: white; padding: 24px; border-radius: 40px; border: 1px solid #eee; transition: all 0.3s ease; }
         .card-auditado:hover { transform: translateY(-8px); border-color: #E87C46; box-shadow: 0 20px 40px rgba(232, 124, 70, 0.1); }
-        #voodogo-gate { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
-        .ai-pulse { width: 8px; height: 8px; background: #E87C46; border-radius: 50%; animation: pulse-voodogo 2s infinite; }
-        @keyframes pulse-voodogo { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .ai-pulse { width: 8px; height: 8px; background: #E87C46; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
     </style>
 </head>
-<body class="text-stone-800 leading-relaxed">
-
-    <div id="voodogo-gate">
-        <div class="bg-white p-8 rounded-[40px] max-w-sm w-full text-center">
-            <h2 class="text-xl font-bold mb-2">VALIDAR IA</h2>
-            <input type="text" id="voodogo-city" placeholder="Cidade autorizada" class="w-full p-4 border rounded-2xl mb-4 text-center outline-none">
-            <button onclick="ativarVoodogo()" class="w-full bg-orange-main text-white p-4 rounded-2xl font-bold uppercase text-[10px] tracking-widest shadow-lg">Ativar Agora</button>
-        </div>
-    </div>
+<body class="text-stone-800">
 
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-orange-100 px-6 py-4">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <div class="w-8 h-8 bg-orange-main rounded-xl flex items-center justify-center text-white"><i class="fas fa-heart text-xs"></i></div>
-                <span class="font-bold uppercase tracking-tight">Locação<span class="text-orange-main">Smart</span></span>
+                <span class="font-bold uppercase tracking-tight text-stone-900">Locação<span class="text-orange-main">Smart</span></span>
             </div>
             <div class="flex items-center gap-2 text-[10px] font-bold text-orange-600 uppercase italic">
                 <div class="ai-pulse"></div> Engine Ativa
@@ -41,32 +31,19 @@
         </div>
     </nav>
 
-    <section class="pt-16 pb-12 px-6 text-center">
-        <h1 class="text-4xl md:text-7xl font-bold text-stone-900 leading-[1.1] mb-8">Morar com <span class="text-orange-main italic font-light">segurança.</span></h1>
-        <div onclick="document.getElementById('voodogo-gate').style.display='flex'" class="inline-flex items-center gap-3 bg-stone-900 text-white px-8 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest cursor-pointer hover:bg-orange-main transition-all shadow-xl">
-            <i class="fas fa-robot text-orange-main"></i> Conectar Busca Progressiva
+    <section class="py-16 px-6 bg-stone-50">
+        <div class="max-w-6xl mx-auto text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold text-stone-900 mb-4 uppercase tracking-tighter">Mural de Oportunidades</h2>
+            <p class="text-orange-main font-medium italic">Feeds auditados em tempo real pelas fontes avançadas</p>
         </div>
-    </section>
-
-    <section class="py-20 bg-stone-50 px-6 rounded-[60px] mx-2">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-12">
-                <h2 class="text-3xl font-bold text-stone-900 uppercase tracking-tighter">Mural de Oportunidades</h2>
-                <p class="text-orange-main font-medium italic">Anúncios reais auditados hoje em Curitiba</p>
-            </div>
-            
-            <div id="feed-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="col-span-full text-center py-20 text-stone-400">
-                    <i class="fas fa-sync fa-spin text-2xl mb-4"></i>
-                    <p class="text-xs font-bold uppercase tracking-widest">Sincronizando com o motor progressivo...</p>
-                </div>
+        
+        <div id="feed-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="col-span-full text-center py-20 text-stone-400">
+                <i class="fas fa-sync fa-spin text-2xl mb-4"></i>
+                <p class="text-xs font-bold uppercase tracking-widest">Sincronizando com o motor progressivo...</p>
             </div>
         </div>
     </section>
-
-    <footer class="py-20 text-center text-stone-300 text-[10px] font-bold uppercase tracking-widest">
-        Locação Smart • Transparência e Segurança Imobiliária
-    </footer>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -87,22 +64,22 @@
             if (data) {
                 container.innerHTML = "";
                 Object.keys(data).forEach(key => {
-                    const anuncio = data[key];
+                    const item = data[key];
                     container.innerHTML += `
                         <div class="card-auditado shadow-sm">
                             <div class="flex justify-between mb-4">
-                                <span class="bg-orange-50 text-orange-600 text-[9px] font-black px-2 py-1 rounded-lg uppercase italic">Disponível</span>
+                                <span class="bg-orange-50 text-orange-600 text-[9px] font-black px-2 py-1 rounded-lg uppercase italic">Auditado</span>
                                 <span class="text-stone-300 text-[9px] font-bold tracking-widest uppercase">ID: ${key.split('_')[1] || '01'}</span>
                             </div>
-                            <h3 class="text-xl font-bold text-stone-900 mb-1 leading-tight">${anuncio.titulo}</h3>
-                            <p class="text-stone-400 text-xs mb-6"><i class="fas fa-map-marker-alt mr-1 text-orange-main"></i> ${anuncio.endereco || 'Cajuru, Curitiba'}</p>
+                            <h3 class="text-xl font-bold text-stone-900 mb-1 leading-tight">${item.titulo || "Imóvel Curitiba"}</h3>
+                            <p class="text-stone-400 text-xs mb-6"><i class="fas fa-map-marker-alt mr-1 text-orange-main"></i> ${item.endereco || 'Localização Auditada'}</p>
                             
                             <div class="flex items-center justify-between mt-auto pt-6 border-t border-dashed border-stone-100">
                                 <div>
-                                    <p class="text-[9px] font-bold text-stone-400 uppercase tracking-widest">Mensalidade</p>
-                                    <p class="text-2xl font-bold text-stone-900">R$ ${anuncio.valor}</p>
+                                    <p class="text-[9px] font-bold text-stone-400 uppercase tracking-widest">Valor Mensal</p>
+                                    <p class="text-2xl font-bold text-stone-900">R$ ${item.valor}</p>
                                 </div>
-                                <a href="https://wa.me/${anuncio.contato}" target="_blank" class="bg-stone-900 text-white px-5 py-3 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-orange-main transition-colors">
+                                <a href="https://wa.me/${item.contato}" target="_blank" class="bg-stone-900 text-white px-5 py-3 rounded-2xl text-[10px] font-bold uppercase tracking-widest hover:bg-orange-main transition-colors shadow-lg shadow-stone-200">
                                     CONTATO DIRETO
                                 </a>
                             </div>
@@ -113,19 +90,6 @@
                 container.innerHTML = '<p class="col-span-full text-center text-stone-400 italic py-10">Buscando novos anúncios reais...</p>';
             }
         });
-    </script>
-
-    <script>
-        function ativarVoodogo() {
-            const city = document.getElementById('voodogo-city').value.trim().toLowerCase();
-            if (["curitiba", "londrina", "sao paulo"].includes(city)) {
-                document.getElementById('voodogo-gate').style.display = 'none';
-                alert("Motor ativado para " + city + "!");
-            } else {
-                alert("Cidade em análise. Chame no WhatsApp.");
-            }
-        }
-        document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
 </body>
 </html>
