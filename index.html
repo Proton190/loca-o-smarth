@@ -3,153 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Locação Smart | Voodogo Engine</title>
+    <title>Suporte Locação Smart | Busca Progressiva</title>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
     <style>
-        body { font-family: 'Outfit', sans-serif; background-color: #FDFCFB; -webkit-tap-highlight-color: transparent; }
-        .bg-beige-soft { background-color: #F7F2EE; }
-        .text-orange-main { color: #E87C46; }
+        body { font-family: 'Outfit', sans-serif; background-color: #FDFCFB; user-select: none; -webkit-user-select: none; }
         .bg-orange-main { background-color: #E87C46; }
-        .hover-lift { transition: all 0.3s ease; }
-        @media (min-width: 1024px) { .hover-lift:hover { transform: translateY(-8px); } }
-        html { scroll-behavior: smooth; }
-        .btn-responsive {
-            width: 100%; display: flex; align-items: center; justify-content: center;
-            gap: 12px; padding: 18px; border-radius: 20px; font-weight: 700; transition: all 0.3s ease;
-        }
-        @media (min-width: 768px) { .btn-responsive { width: auto; padding: 20px 40px; } }
+        .text-orange-main { color: #E87C46; }
+        .card-imovel { background: white; padding: 20px; border-radius: 30px; border: 1px solid #eee; transition: all 0.3s ease; }
+        .card-imovel:hover { transform: translateY(-5px); border-color: #E87C46; }
+        #voodogo-gate { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+        .ai-pulse { width: 8px; height: 8px; background: #E87C46; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
     </style>
 </head>
-<body class="text-stone-800 leading-relaxed">
+<body class="text-stone-800">
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-orange-100 px-4 md:px-8 py-4">
+    <div id="voodogo-gate">
+        <div class="bg-white p-8 rounded-[40px] max-w-sm w-full text-center">
+            <h2 class="text-xl font-bold mb-2 uppercase">Validar IA</h2>
+            <input type="text" id="voodogo-city" placeholder="Cidade autorizada" class="w-full p-4 border rounded-2xl mb-4 text-center outline-none">
+            <button onclick="ativarVoodogo()" class="w-full bg-orange-main text-white p-4 rounded-2xl font-bold uppercase text-xs tracking-widest">Ativar Agora</button>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-orange-100 px-4 py-4">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <div class="w-8 h-8 md:w-10 md:h-10 bg-orange-main rounded-xl flex items-center justify-center text-white shadow-lg shadow-orange-200">
-                    <i class="fas fa-heart text-xs md:text-sm"></i>
-                </div>
-                <span class="text-lg md:text-xl font-bold tracking-tight text-stone-900 uppercase">Locação<span class="text-orange-main">Smart</span></span>
+                <div class="w-8 h-8 bg-orange-main rounded-xl flex items-center justify-center text-white"><i class="fas fa-heart text-xs"></i></div>
+                <span class="font-bold uppercase tracking-tight">Locação<span class="text-orange-main">Smart</span></span>
             </div>
-            <a href="#proposta" class="bg-stone-900 text-white px-4 py-2.5 md:px-6 md:py-3 rounded-full text-[10px] md:text-xs font-bold hover:bg-orange-main transition-all uppercase tracking-widest">
-                Saiba como funciona
-            </a>
+            <div class="flex items-center gap-2 text-[10px] font-bold text-orange-600 uppercase italic">
+                <div class="ai-pulse"></div> Engine Ativa
+            </div>
         </div>
     </nav>
 
-    <section class="pt-12 pb-10 md:pt-24 md:pb-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-[10px] md:text-xs font-black mb-8 border border-orange-100 uppercase tracking-widest">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-                </span>
-                Sistema Voodogo Ativo
-            </div>
-            
-            <h1 class="text-4xl md:text-7xl font-bold text-stone-900 leading-[1.1] mb-8">
-                Busca de moradia com <span class="text-orange-main italic font-light">alma humana.</span>
-            </h1>
-            
-            <p class="text-base md:text-xl text-stone-500 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-                Não somos um portal frio. Analisamos anúncios públicos em tempo real (Curitiba e região) para você morar com tranquilidade.
-            </p>
-
-            <div class="flex flex-col items-center gap-4">
-                <a href="https://wa.me/5543996753779" class="btn-responsive bg-orange-main text-white shadow-2xl shadow-orange-200 hover:scale-105 active:scale-95">
-                    <i class="fab fa-whatsapp text-2xl"></i> SOLICITAR SUPORTE AGORA
-                </a>
-            </div>
+    <section class="pt-16 pb-12 px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">Busca de moradia com <span class="text-orange-main italic font-light">alma humana.</span></h1>
+        <p class="text-stone-500 max-w-2xl mx-auto mb-8 font-light">Filtramos anúncios reais em tempo real para sua segurança.</p>
+        <div onclick="document.getElementById('voodogo-gate').style.display='flex'" class="inline-flex items-center gap-3 bg-stone-900 text-white px-8 py-4 rounded-full text-xs font-bold uppercase tracking-widest cursor-pointer hover:bg-orange-main transition-all">
+            <i class="fas fa-robot"></i> Conectar Inteligência Progressiva
         </div>
     </section>
 
-    <section id="area-resultados" class="hidden py-10 px-6 bg-white">
+    <section class="py-12 px-6 bg-stone-50">
         <div class="max-w-6xl mx-auto">
-            <h3 class="text-2xl font-bold mb-8 text-stone-900 border-l-4 border-orange-main pl-4">Imóveis Disponíveis Agora</h3>
-            <div id="lista-imoveis" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="text-center w-full col-span-full py-10 text-stone-400">
-                    <i class="fas fa-spinner fa-spin text-3xl mb-4"></i><br>Conectando ao Voodogo...
+            <div class="flex items-center gap-3 mb-8">
+                <div class="h-1 w-12 bg-orange-main"></div>
+                <h2 class="text-2xl font-bold uppercase tracking-tighter">Oportunidades Auditadas</h2>
+            </div>
+            
+            <div id="mural-voodogo" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="col-span-full text-center py-20 text-stone-400 italic">
+                    <i class="fas fa-sync fa-spin mb-4 text-2xl"></i>
+                    <p>Sincronizando feed de anúncios reais...</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="proposta" class="py-20 bg-white px-6">
-        <div class="max-w-3xl mx-auto">
-            <div class="bg-beige-soft p-8 md:p-12 rounded-[40px] border border-orange-100 shadow-sm">
-                <h2 class="text-2xl font-bold text-stone-900 mb-8 flex items-center gap-3">
-                    <i class="fas fa-info-circle text-orange-main"></i> Transparência Locação Smart
-                </h2>
-                <div class="space-y-8 text-stone-700">
-                    <p class="font-semibold text-orange-main leading-relaxed">Ambiente exclusivo para contato direto com proprietários.</p>
-                    <div class="space-y-6 font-light">
-                        <div class="flex gap-4"><span class="text-xl">📍</span><p><b>Curadoria:</b> Apenas imóveis reais e auditados.</p></div>
-                        <div class="flex gap-4"><span class="text-xl">⚡</span><p><b>Velocidade:</b> Dados em tempo real via Streaming JSON.</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-20 text-center px-6 border-t border-stone-100">
-        <div class="max-w-xl mx-auto">
-            <div class="text-[10px] text-stone-300 font-bold uppercase tracking-widest">
-                Locação Smart • Powered by Voodogo 3.0
-            </div>
-        </div>
+    <footer class="py-20 text-center border-t border-stone-100 mt-12">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-stone-400">Locação Smart • Transparência Imobiliária</p>
     </footer>
 
     <script type="module">
-        // Importando as ferramentas necessárias do Firebase
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-        // CONFIGURAÇÃO REAL - CONEXÃO COM O BANCO DA FOTO
         const firebaseConfig = {
-            databaseURL: "https://voodogo-3ddf4-default-rtdb.firebaseio.com/", // SUA URL AQUI
-            projectId: "voodogo-3ddf4"
+            databaseURL: "https://voodogo-3ddf4-default-rtdb.firebaseio.com"
         };
 
-        // Inicializando o App
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
-
-        // Referência à pasta de anúncios (Protocolo Árvore)
         const anunciosRef = ref(db, 'anuncios');
 
-        // Escutando o banco em tempo real (Streaming)
         onValue(anunciosRef, (snapshot) => {
             const data = snapshot.val();
-            const container = document.getElementById('lista-imoveis');
-            const section = document.getElementById('area-resultados');
-
+            const mural = document.getElementById('mural-voodogo');
+            
             if (data) {
-                // Se existirem dados, limpa o loading e mostra a lista
-                section.classList.remove('hidden');
-                container.innerHTML = ''; 
-                
-                // Transforma o JSON em Cards
+                mural.innerHTML = "";
                 Object.keys(data).forEach(key => {
-                    const imovel = data[key];
-                    // Card Minimalista
-                    const card = `
-                        <div class="bg-white border border-stone-100 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all">
-                            <h4 class="font-bold text-lg text-stone-800 mb-2">${imovel.titulo || 'Imóvel'}</h4>
-                            <p class="text-orange-main font-bold text-xl mb-4">R$ ${imovel.valor || 'Consulta'}</p>
-                            <a href="https://wa.me/55${imovel.contato}" target="_blank" class="block text-center bg-stone-900 text-white py-3 rounded-xl text-sm font-bold uppercase">
-                                Contato Direto
-                            </a>
+                    const item = data[key];
+                    mural.innerHTML += `
+                        <div class="card-imovel shadow-sm">
+                            <div class="text-[10px] font-black text-orange-main uppercase mb-2">Disponível Agora</div>
+                            <h3 class="text-lg font-bold mb-1">${item.titulo}</h3>
+                            <p class="text-stone-500 text-sm mb-4"><i class="fas fa-location-dot mr-1"></i> ${item.endereco || 'Curitiba'}</p>
+                            <div class="flex items-center justify-between mt-4 pt-4 border-t border-dashed">
+                                <span class="text-2xl font-bold">R$ ${item.valor}</span>
+                                <a href="https://wa.me/${item.contato}" class="bg-stone-900 text-white px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest hover:bg-orange-main transition-colors">Contato Direto</a>
+                            </div>
                         </div>
                     `;
-                    container.innerHTML += card;
                 });
-            } else {
-                // Se o banco estiver vazio (Null)
-                // Mantém a área oculta ou mostra aviso discreto
-                console.log("Aguardando dados no Voodogo...");
             }
         });
+    </script>
+
+    <script>
+        function ativarVoodogo() {
+            const city = document.getElementById('voodogo-city').value.trim().toLowerCase();
+            if (["curitiba", "londrina"].includes(city)) {
+                document.getElementById('voodogo-gate').style.display = 'none';
+                alert("Motor de busca progressiva ativado para " + city);
+            } else {
+                alert("Cidade em validação. Chame no suporte.");
+            }
+        }
     </script>
 </body>
 </html>
