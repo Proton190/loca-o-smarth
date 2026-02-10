@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Locação Smart | Suporte Humanizado</title>
+    <title>Locação Smart | Voodogo Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,11 +12,8 @@
         .bg-beige-soft { background-color: #F7F2EE; }
         .text-orange-main { color: #E87C46; }
         .bg-orange-main { background-color: #E87C46; }
-        
         .hover-lift { transition: all 0.3s ease; }
-        @media (min-width: 1024px) {
-            .hover-lift:hover { transform: translateY(-8px); }
-        }
+        @media (min-width: 1024px) { .hover-lift:hover { transform: translateY(-8px); } }
         html { scroll-behavior: smooth; }
         .btn-responsive {
             width: 100%; display: flex; align-items: center; justify-content: center;
@@ -35,21 +32,20 @@
                 </div>
                 <span class="text-lg md:text-xl font-bold tracking-tight text-stone-900 uppercase">Locação<span class="text-orange-main">Smart</span></span>
             </div>
-            <a href="#proposta" 
-               class="bg-stone-900 text-white px-4 py-2.5 md:px-6 md:py-3 rounded-full text-[10px] md:text-xs font-bold hover:bg-orange-main transition-all uppercase tracking-widest">
+            <a href="#proposta" class="bg-stone-900 text-white px-4 py-2.5 md:px-6 md:py-3 rounded-full text-[10px] md:text-xs font-bold hover:bg-orange-main transition-all uppercase tracking-widest">
                 Saiba como funciona
             </a>
         </div>
     </nav>
 
-    <section class="pt-12 pb-20 md:pt-24 md:pb-32 px-6">
+    <section class="pt-12 pb-10 md:pt-24 md:pb-20 px-6">
         <div class="max-w-4xl mx-auto text-center">
             <div class="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 text-orange-600 rounded-full text-[10px] md:text-xs font-black mb-8 border border-orange-100 uppercase tracking-widest">
                 <span class="relative flex h-2 w-2">
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
                 </span>
-                Suporte Ativo agora
+                Sistema Voodogo Ativo
             </div>
             
             <h1 class="text-4xl md:text-7xl font-bold text-stone-900 leading-[1.1] mb-8">
@@ -57,15 +53,24 @@
             </h1>
             
             <p class="text-base md:text-xl text-stone-500 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-                Não somos um portal frio. Somos o seu filtro pessoal contra golpes. Analisamos anúncios públicos em tempo real para você morar com tranquilidade.
+                Não somos um portal frio. Analisamos anúncios públicos em tempo real (Curitiba e região) para você morar com tranquilidade.
             </p>
 
-            <div class="flex flex-col items-center">
-                <a href="https://wa.me/5543996753779?text=desejo%20suporte%20e%20receberei%20es" 
-                   class="btn-responsive bg-orange-main text-white shadow-2xl shadow-orange-200 hover:scale-105 active:scale-95">
-                    <i class="fab fa-whatsapp text-2xl"></i>
-                    SOLICITAR SUPORTE AGORA
+            <div class="flex flex-col items-center gap-4">
+                <a href="https://wa.me/5543996753779" class="btn-responsive bg-orange-main text-white shadow-2xl shadow-orange-200 hover:scale-105 active:scale-95">
+                    <i class="fab fa-whatsapp text-2xl"></i> SOLICITAR SUPORTE AGORA
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="area-resultados" class="hidden py-10 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-2xl font-bold mb-8 text-stone-900 border-l-4 border-orange-main pl-4">Imóveis Disponíveis Agora</h3>
+            <div id="lista-imoveis" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="text-center w-full col-span-full py-10 text-stone-400">
+                    <i class="fas fa-spinner fa-spin text-3xl mb-4"></i><br>Conectando ao Voodogo...
+                </div>
             </div>
         </div>
     </section>
@@ -76,81 +81,75 @@
                 <h2 class="text-2xl font-bold text-stone-900 mb-8 flex items-center gap-3">
                     <i class="fas fa-info-circle text-orange-main"></i> Transparência Locação Smart
                 </h2>
-                
                 <div class="space-y-8 text-stone-700">
-                    <p class="font-semibold text-orange-main leading-relaxed">
-                        Ambiente exclusivo para membros em processo de adaptação imediata.
-                    </p>
-
+                    <p class="font-semibold text-orange-main leading-relaxed">Ambiente exclusivo para contato direto com proprietários.</p>
                     <div class="space-y-6 font-light">
-                        <div class="flex gap-4">
-                            <span class="text-xl">📍</span>
-                            <p><b>O que entregamos:</b> Curadoria técnica de imóveis na localização desejada e arredores imediatos.</p>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <span class="text-xl">🤝</span>
-                            <p><b>Nossa Missão:</b> Proteger seu tempo e garantir sua total autonomia. Conectamos você diretamente aos anúncios reais, sem intermediações.</p>
-                        </div>
-
-                        <div class="flex gap-4">
-                            <span class="text-xl">⚡</span>
-                            <p><b>Eficácia:</b> Informação limpa e contatos reais entregues em poucas horas para o seu convívio social moderno.</p>
-                        </div>
-                    </div>
-
-                    <div class="pt-8 border-t border-orange-200 mt-8">
-                        <p class="text-lg font-bold leading-snug">
-                            O controle da negociação é 100% seu. <br class="hidden md:block">
-                            <span class="text-orange-main">Não somos imobiliária, somos o seu suporte tecnológico.</span>
-                        </p>
+                        <div class="flex gap-4"><span class="text-xl">📍</span><p><b>Curadoria:</b> Apenas imóveis reais e auditados.</p></div>
+                        <div class="flex gap-4"><span class="text-xl">⚡</span><p><b>Velocidade:</b> Dados em tempo real via Streaming JSON.</p></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-beige-soft px-6 rounded-[40px] md:rounded-[100px] mx-2 md:mx-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="order-2 lg:order-1">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-stone-900">Nossa finalidade é sua segurança.</h2>
-                    <div class="space-y-4">
-                        <div class="bg-white p-6 rounded-3xl border border-orange-50 flex gap-5 hover-lift">
-                            <i class="fas fa-shield-halved text-2xl text-orange-main"></i>
-                            <p class="text-sm md:text-base text-stone-600 font-light">Facilitamos sua procura por moradia de forma transparente e segura.</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-3xl border border-orange-50 flex gap-5 hover-lift">
-                            <i class="fas fa-microscope text-2xl text-orange-main"></i>
-                            <p class="text-sm md:text-base text-stone-600 font-light">Filtramos anúncios públicos e entregamos um laudo de verificação.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 lg:order-2 bg-white p-8 md:p-12 rounded-[50px] shadow-xl border border-orange-100">
-                    <div class="w-16 h-1 bg-orange-main mb-8 rounded-full"></div>
-                    <p class="text-xl md:text-2xl text-stone-800 font-medium leading-relaxed italic">
-                        "Meu trabalho é ser o seu olho clínico no mercado. Eu analiso o que ninguém te conta para você não perder dinheiro nem tempo."
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-20 text-center px-6">
+    <footer class="py-20 text-center px-6 border-t border-stone-100">
         <div class="max-w-xl mx-auto">
-            <h3 class="text-2xl font-bold mb-8 text-stone-900">Como funciona o pagamento?</h3>
-            <p class="text-stone-500 mb-10 text-sm font-light">
-                É simples e direto: você me chama, eu te explico como farei sua varredura, envio o <b>PIX</b> e em minutos você recebe o suporte de filtragem em tempo real.
-            </p>
-            <a href="https://wa.me/5543996753779?text=desejo%20suporte%20e%20receberei%20es" 
-               class="btn-responsive border-2 border-stone-900 text-stone-900 hover:bg-stone-900 hover:text-white uppercase tracking-widest text-xs">
-                ME CHAME NO WHATSAPP
-            </a>
-            <div class="mt-20 pt-8 border-t border-stone-100 text-[10px] text-stone-300 font-bold uppercase tracking-widest">
-                Locação Smart • Transparência e Segurança Imobiliária
+            <div class="text-[10px] text-stone-300 font-bold uppercase tracking-widest">
+                Locação Smart • Powered by Voodogo 3.0
             </div>
         </div>
     </footer>
 
+    <script type="module">
+        // Importando as ferramentas necessárias do Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
+
+        // CONFIGURAÇÃO REAL - CONEXÃO COM O BANCO DA FOTO
+        const firebaseConfig = {
+            databaseURL: "https://voodogo-3ddf4-default-rtdb.firebaseio.com/", // SUA URL AQUI
+            projectId: "voodogo-3ddf4"
+        };
+
+        // Inicializando o App
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Referência à pasta de anúncios (Protocolo Árvore)
+        const anunciosRef = ref(db, 'anuncios');
+
+        // Escutando o banco em tempo real (Streaming)
+        onValue(anunciosRef, (snapshot) => {
+            const data = snapshot.val();
+            const container = document.getElementById('lista-imoveis');
+            const section = document.getElementById('area-resultados');
+
+            if (data) {
+                // Se existirem dados, limpa o loading e mostra a lista
+                section.classList.remove('hidden');
+                container.innerHTML = ''; 
+                
+                // Transforma o JSON em Cards
+                Object.keys(data).forEach(key => {
+                    const imovel = data[key];
+                    // Card Minimalista
+                    const card = `
+                        <div class="bg-white border border-stone-100 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all">
+                            <h4 class="font-bold text-lg text-stone-800 mb-2">${imovel.titulo || 'Imóvel'}</h4>
+                            <p class="text-orange-main font-bold text-xl mb-4">R$ ${imovel.valor || 'Consulta'}</p>
+                            <a href="https://wa.me/55${imovel.contato}" target="_blank" class="block text-center bg-stone-900 text-white py-3 rounded-xl text-sm font-bold uppercase">
+                                Contato Direto
+                            </a>
+                        </div>
+                    `;
+                    container.innerHTML += card;
+                });
+            } else {
+                // Se o banco estiver vazio (Null)
+                // Mantém a área oculta ou mostra aviso discreto
+                console.log("Aguardando dados no Voodogo...");
+            }
+        });
+    </script>
 </body>
 </html>
